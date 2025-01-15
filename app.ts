@@ -1,10 +1,48 @@
 import express from 'express';
 import path from 'path';
+import fs from 'fs/promises';
 
 const app = express();
 const PORT = 3000;
+const filePath = path.join(__dirname, 'save.json');
+
 let primaryPassword = 0;
 let secondaryPassword = 0;
+
+readSavePasswords().then(data => {
+  primaryPassword = data.primaryPassword;
+  secondaryPassword = data.secondaryPassword;
+})
+
+async function readSavePasswords() {
+  try {
+    const data = await fs.readFile(filePath, 'utf8');
+    const jsonData = JSON.parse(data);
+
+    return {
+      primaryPassword: jsonData.primary_password,
+      secondaryPassword: jsonData.secondary_password
+    }
+    
+  } catch (err) {
+    console.error('Erro ao ler o arquivo:', err);
+    throw err;
+  }
+}
+
+async function writeSavePassword() {
+  try {
+    const data = JSON.stringify({
+      primary_password: primaryPassword,
+      secondary_password: secondaryPassword
+    }, null, 2);
+
+    await fs.writeFile(filePath, data, 'utf8');
+  } catch (err) {
+    console.error('Erro ao escrever no arquivo:', err);
+    throw err;
+  }
+}
 
 // Servir arquivos estáticos da pasta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
@@ -39,6 +77,8 @@ app.post('/addPrimaryPassword', (req, res) => {
   res.send({
     "status": "success"
   });
+
+  writeSavePassword();
 })
 
 // Rota para incrementar o valor da senha preferencial
@@ -50,6 +90,8 @@ app.post('/addSecondaryPassword', (req, res) => {
   res.send({
     "status": "success"
   });
+  
+  writeSavePassword();
 })
 
 // Rota para alterar o valor das senhas manualmente
@@ -65,6 +107,8 @@ app.post('/setPasswords', (req, res) => {
       res.send({
         "status": "success"
       });
+      
+      writeSavePassword();
     } else {
       res.status(400).send({
         "status": "error",
