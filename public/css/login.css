@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -11,63 +11,73 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #22577A; 
+  background-color: #121212; /* Fundo escuro */
+  color: #fff;
 }
 
-.login {
+a {
+  text-decoration: none;
+  color: #80cbc4;
+}
+
+#login {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.caixa {
   width: 350px;
   padding: 30px; 
-  background-color: #4CAF50;
-  color: #22577A;
+  background-color: #1e1e1e; /* Caixa mais escura */
+  color: #ffffff;
   text-align: center;
-  border: 2px solid #38A3A5;
+  border: 2px solid #80cbc4; /* Borda em tom aquático */
   border-radius: 15px;
-  box-shadow: 5px 5px 15px #222;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /*mini animação a a tela de login*/
+  box-shadow: 5px 5px 15px #000000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 65px;
 }
 
-.login:hover {
+.caixa:hover {
   transform: scale(1.05);
-  box-shadow: 5px 5px 20px #333;
+  box-shadow: 5px 5px 20px #333333;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.caixa img {
+  width: 115px;
+  margin-bottom: 20px;
 }
 
-label {
-  width: 100%;
-  margin-bottom: 5px; 
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.email input,
+.senha input {
+  border-radius: 15px;
+  border: none;
+  width: 250px;
+  height: 40px;
+  padding-left: 15px;
+  background-color: #2c2c2c;
+  color: #b6b6b6;
   margin-bottom: 15px;
 }
 
-input:focus {
-  border-color: #38A3A5;
-  outline: none;
-}
-
-button.bl {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #38A3A5;
-  color: white;
-  font-weight: bold;
+.entrar input {
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: #80cbc4; /* Botão em tom aquático */
+  color: #121212;
 }
 
-button.bl:hover {
-  background-color: #57CC99;
+input::placeholder {
+  color: #b6b6b6;
+}
+
+input:focus {
+  outline: none;
+  border-color: #80cbc4;
 }
