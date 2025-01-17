@@ -1,1 +1,44 @@
-Hello World
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/action.css">
+    <title>Contador</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div class="counter" id="counter1">0</div>
+            <button onclick="increaseCounter('counter1')">Aumentar</button>
+            <button onclick="decreaseCounter('counter1')">Diminuir</button>
+        </div>
+        <div>
+            <div class="counter" id="counter2">0</div>
+            <button onclick="increaseCounter('counter2')">Aumentar</button>
+            <button onclick="decreaseCounter('counter2')">Diminuir</button>
+        </div>
+    </div>
+
+    <script>
+   function increaseCounter(counterId) {
+    console.log('Aumentar foi clicado!');
+    let counter = document.getElementById(counterId);
+    let value = parseInt(counter.innerText);
+    if (value < 99) {
+        counter.innerText = value + 1;
+    }
+}
+
+function decreaseCounter(counterId) {
+    console.log('Diminuir foi clicado!');
+    let counter = document.getElementById(counterId);
+    let value = parseInt(counter.innerText);
+    if (value > 0) {
+        counter.innerText = value - 1;
+    }
+}
+
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-// Função para carregar uma nova página dinamicamente
+// Função para carregar uma nova página 
 function LP(file) {
     fetch(file)
       .then(response => {
