@@ -7,23 +7,19 @@
     <title>PassaKey</title>
 </head>
 <body>
-<div id="login">
-    <div class="caixa">
-        <img class="logo" src="Image/Logo-Biolab-2.png" alt="LogoPL">
-        <div class="email">
-            <input type="text" id="Usuario" name="Usuario" placeholder="Digite o Usuario">
+<div>
+    <form id="login_form">
+        <div class="form_input">
+            <input type="text" name="login" id="login">
+            <label for="login">Login</label>
         </div>
-        <div class="senha">
-            <input type="password" id="password" name="password" placeholder="Digite a senha">
+        <div class="form_input">
+            <input type="password" name="password" id="password">
+            <label for="password">Senha</label>
         </div>
-        <div class="entrar">
-           
-            <input onclick="LP('action.html')" type="button" value="Conectar">
-        </div>
-    </div>
+        <input type="submit" value="Logar" id="login_button">
+    </form>
 </div>
-
-
 <script src="scripty.js"></script>
 </body>
 </html>

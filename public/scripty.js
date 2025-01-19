@@ -1,27 +1,11 @@
-// Função para carregar uma nova página 
-function LP(file) {
-    fetch(file)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Erro ao carregar a página');
-        }
-        return response.text();
-      })
-      .then(html => {
-        document.documentElement.innerHTML = html;
-  
-        const newScript = document.createElement('script');
-        newScript.innerHTML = `
-          function LP(file) {
-            fetch(file)
-              .then(response => response.text())
-              .then(html => document.documentElement.innerHTML = html)
-              .catch(err => console.error(err));
-          }
-        `;
-        document.body.appendChild(newScript);
-      })
-      .catch(error => {
-        alert(`Erro ao carregar a página: ${error.message}`);
-      });
-  }
+const input_login = document.querySelector("#login")
+const input_password = document.querySelector("#password")
+const form = document.querySelector("#login_form")
+
+
+form.addEventListener("submit", () => {
+    event.preventDefault()
+    if(input_login.value == "admin" && input_password.value == "admin") {
+        window.location.replace("./action.html")
+    }
+})
