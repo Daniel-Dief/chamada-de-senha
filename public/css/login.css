@@ -10,35 +10,31 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
-  background-color: #121212; /* Fundo escuro */
+  background-color: #121212;
   color: #fff;
 }
 
-a {
-  text-decoration: none;
-  color: #80cbc4;
-}
-
-#login {
+.container {
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
 }
 
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+  margin-top: -40px; /* sobe a imagem */
+}
+/*Animação dahora👍*/
 .caixa {
   width: 350px;
-  padding: 30px; 
-  background-color: #1e1e1e; /* Caixa mais escura */
+  padding: 30px;
+  background-color: #1e1e1e;
   color: #ffffff;
   text-align: center;
-  border: 2px solid #80cbc4; /* Borda em tom aquático */
+  border: 2px solid #80cbc4;
   border-radius: 15px;
   box-shadow: 5px 5px 15px #000000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 65px;
+  margin: 0 auto;
 }
 
 .caixa:hover {
@@ -46,13 +42,7 @@ a {
   box-shadow: 5px 5px 20px #333333;
 }
 
-.caixa img {
-  width: 115px;
-  margin-bottom: 20px;
-}
-
-.email input,
-.senha input {
+.form_input input {
   border-radius: 15px;
   border: none;
   width: 250px;
@@ -69,8 +59,14 @@ a {
   height: 40px;
   border-radius: 20px;
   border: none;
-  background-color: #80cbc4; /* Botão em tom aquático */
+  background-color: #80cbc4;
   color: #121212;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.entrar input:hover {
+  background-color: #4db6ac;
 }
 
 input::placeholder {
@@ -79,5 +75,5 @@ input::placeholder {
 
 input:focus {
   outline: none;
-  border-color: #80cbc4;
+  border: 1px solid #80cbc4;
 }

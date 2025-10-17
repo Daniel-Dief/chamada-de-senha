@@ -7,5 +7,7 @@ form.addEventListener("submit", () => {
     event.preventDefault()
     if(input_login.value == "admin" && input_password.value == "admin") {
         window.location.replace("./action.html")
+    }else {
+        alert("Login ou senha incorretos!")
     }
 })
