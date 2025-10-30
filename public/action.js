@@ -31,11 +31,21 @@ async function increaseCounter(counterId) {
         console.error('Falha na requisição:', error);
     }
 }
-
-function decreaseCounter(counterId) {
-    let counter = document.getElementById(counterId);
-    let value = parseInt(counter.innerText);
-    if (value > 0) {
-        counter.innerText = value - 1;
+async function atualizarSenhas() {
+    try {
+        const response = await fetch('/getPasswords');
+        if (!response.ok) {
+            console.error('Não foi possível buscar as senhas do servidor.');
+            return;
+        }
+        const data = await response.json();
+        document.getElementById('counter1').innerText = data.senha_normal;
+        document.getElementById('counter2').innerText = data.senha_preferencial;
+    } catch (error) {
+        console.error('Erro ao tentar atualizar os contadores:', error);
     }
 }
+
+atualizarSenhas();
+
+setInterval(atualizarSenhas, 1000);
