@@ -9,15 +9,24 @@
 </head>
 <body>
     <div class="container">
-        <div>
+        <!-- Caixa 1 - Branca -->
+        <div class="box">
+            <h2 class="titulo branca">Normal</h2>
             <div class="counter" id="counter1">0</div>
-            <button onclick="increaseCounter('counter1')">Aumentar</button>
-            <button onclick="decreaseCounter('counter1')">Diminuir</button>
+            <div class="botoes">
+                <button onclick="increaseCounter('counter1')">Aumentar</button>
+                <button onclick="decreaseCounter('counter1')">Diminuir</button>
+            </div>
         </div>
-        <div>
+
+        <!-- Caixa 2 - Preferencial -->
+        <div class="box">
+            <h2 class="titulo preferencial">Preferencial</h2>
             <div class="counter" id="counter2">0</div>
-            <button onclick="increaseCounter('counter2')">Aumentar</button>
-            <button onclick="decreaseCounter('counter2')">Diminuir</button>
+            <div class="botoes">
+                <button onclick="increaseCounter('counter2')">Aumentar</button>
+                <button onclick="decreaseCounter('counter2')">Diminuir</button>
+            </div>
         </div>
     </div>
 </body>
