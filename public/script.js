@@ -6,7 +6,7 @@ const form = document.querySelector("#login_form")
 form.addEventListener("submit", () => {
     event.preventDefault()
     if(input_login.value == "admin" && input_password.value == "admin") {
-        window.location.replace("./action.html")
+        window.location.replace("./admin.html")
     }else {
         alert("Login ou senha incorretos!")
     }
