@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/admin.css">
-    <title>Admin_Page</title>
+    <link rel="stylesheet" href="./css/admin.css">
+    <title>Pagina de Configuração</title>
 </head>
 <body>
-    <div>
-            <div class="botoes">
-                <button onclick="increaseCounter('counter1')">Aumentar</button>
-                <button onclick="decreaseCounter('counter1')">Diminuir</button>
-            </div>
-            <div class="botoes">
-                <button onclick="increaseCounter('counter2')">Aumentar</button>
-                <button onclick="decreaseCounter('counter2')">Diminuir</button>
-            </div>
+  <div class="container">
+    <img class="logo" src="./Image/Logo-Biolab-2.png" alt="Logo-Biolab-2">
+    <div class="caixa">
+      <form id="admin_form">
+        <div class="form_input">
+          <label for="primary">Normal</label>
+          <input type="number" max="99" min="0" name="primary" id="primary" placeholder="0">
+        </div>
+        <div class="form_input">
+          <label for="secondary">Preferencial</label>
+          <input type="number" max="99" min="0" name="secondary" id="secondary" placeholder="0">
+        </div>
+        <div class="alterar">
+          <input type="submit" value="Alterar" id="login_button">
+        </div>
+      </form>
     </div>
-
-
+  </div>
+  <script src="admin.js"></script>
 </body>
 </html>
