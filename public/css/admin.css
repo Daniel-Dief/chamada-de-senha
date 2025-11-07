@@ -19,7 +19,9 @@ body {
 }
 
 .logo {
-  width: 150px;
+  
+  width: 350px;
+  height: 350px;
   margin-bottom: 20px;
   margin-top: -40px; /* sobe a imagem */
 }
